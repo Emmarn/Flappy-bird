@@ -27,7 +27,7 @@ useEffect(() => {
       setbirdposition(birdPosition => birdPosition + GRAVITY)
     }, 24)
     return () => 
-      clearInterval(timeId);
+      clearInterval(timeId)
     };
   }, [birdPosition, gamestarted]);
 
@@ -47,9 +47,8 @@ useEffect(() => {
     setobstacleLeft(GAME_WIDTH - OBSTACLE_WIDTH);
     setobstacleHeight(
     Math.floor(Math.random() * (GAME_HEIGTH - OBSTACLE_GAP))
-    );
-    setScore(score + 1 );     //score startar alltid på 1,  vid restart startar de på 2 ??
-  }
+    );  setScore( score + 1) //score startar alltid på 1,  vid restart startar de på 2 ??
+  };   
 }, [gamestarted, obstacleLeft]);
 
 
@@ -61,7 +60,7 @@ useEffect(()=> {
 
   if(obstacleLeft >= 0 && obstacleLeft <= OBSTACLE_WIDTH && (topCollision || bottomcollision)){ 
       setgamestarted(false)
-      setScore(0)
+      setScore(0)   // startar om på 2...
       setbirdposition(250)
   }
 }, [birdPosition, obstacleHeight, bottomObstacleHeight, obstacleLeft]);
