@@ -134,6 +134,7 @@ const GameBox = styled.div`
 height: ${(props) => props.heigth}px;
 width: ${(props) => props.width}px;
 background-image: url(${bunny1});
+background-size: cover;
 overflow: hidden;
 `;
 
